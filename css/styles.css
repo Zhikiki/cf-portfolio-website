@@ -134,20 +134,33 @@ I don't understend where is the code which works for hover/focus for links*/
     transform: translateY(0px);
 }
 
+.profile,
+.profile__buttons_flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .profile {
+    justify-content: center;
+    column-gap: 30px;
     max-width: 700px;
-    margin: 0 auto;
 }
 
 .profile__portrait {
-    float: left;
-    width: 250px;
-    margin-right: 40px;
+    max-width: 250px;
     height: auto;
     border-radius: 50%;
 }
 
-button,
+.profile__buttons_flexbox {
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.button,
+.button_secondary,
 .button_cv {
     border: none;
     font-family: inherit;
@@ -161,8 +174,10 @@ button,
     transition: 0.2s opacity ease-in-out, 0.2s font-size ease-in-out;
 }
 
-button:hover,
-button:focus,
+.button:hover,
+.button:focus,
+.button_secondary:hover,
+.button_secondary:focus,
 .button_cv:hover,
 .button_cv:focus {
     cursor: pointer;
@@ -240,9 +255,13 @@ form {
     }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 565px) {
     .project-list {
         grid-template-columns: 1fr;
+    }
+
+    .profile__content--flexbox {
+        text-align: center;
     }
 }
 
@@ -309,7 +328,6 @@ form {
 }
 
 .page-footer {
-    clear: both;
     display: flex;
     flex-direction: column;
     text-align: center;

@@ -15,7 +15,7 @@
     rel="stylesheet">
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map">
-  <link rel="stylesheet" type="text/css" href="./css/style.production.css">
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 
 <body>
@@ -36,22 +36,30 @@
     </nav>
   </header>
   <main>
+
+
     <div class="profile">
+
       <img src="./img/photo/zhykiki-photo.png" class="profile__portrait" alt="Ksenia Zhykina photo. Pseudonym Zhykiki.">
-      <h1>Hello World!</h1>
-      <p>
-        My name is Ksenia Zhykina
-      </p>
-      <p>
-        I am <span>web</span> developer from Dresden
-      </p>
-      <a href="work.html">Check out some of my code</a>
-      <br>
-      <button>
-        Contact me
-      </button>
-      <button class="button_secondary">About me</button>
+
+      <div class="profile__content--flexbox">
+        <h1>Hello World!</h1>
+        <p>
+          My name is Ksenia Zhykina
+        </p>
+        <p>
+          I am <span>web</span> developer from Dresden
+        </p>
+        <div class="profile__buttons_flexbox">
+          <a class="button">
+            My projects
+          </a>
+          <a href="about.html" class="button_secondary">About me</a>
+        </div>
+      </div>
     </div>
+
+
   </main>
   <footer class="page-footer">
     <p>Find me on</p>
