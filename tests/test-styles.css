@@ -1,0 +1,181 @@
+body {
+    border-left: 10px dashed darkgreen;
+    background-color: lightgray;
+    height: 1000px;
+    padding-left: 40px;
+}
+
+div {
+    width: 150px;
+    background-color: darkgreen;
+    border: 1px solid black;
+    border-left-width: 4px;
+    font: bold 22px/100px Arial, Sans-Serif;
+    color: lightgrey;
+    text-align: center;
+}
+
+.static {
+    position: static;
+}
+
+.relative {
+    position: relative;
+    top: -20px;
+    left: 20px;
+}
+
+.absolute {
+    position: absolute;
+    /* bottom: 20px; */
+    /* left:120px; */
+}
+
+.fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.flex-container {
+    display: flex;
+    background-color: rgba(100, 100, 150, 0.5);
+}
+
+.flex-item {
+    background-color: rgba(100, 100, 150, 1);
+    height: 75px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    line-height: 75px;
+    flex-basis: 190px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.flex-item:last-child {
+    flex-grow: 3;
+}
+
+
+
+
+/* Transition tests */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.container {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 30px;
+}
+
+.button {
+    border: none;
+    font-family: inherit;
+    background-color: #05676e;
+    color: white !important;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid #03474c;
+    transition: 0.4s opacity, 0.5s background-color, 0.4s font-size;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.button2:hover {
+    background-color: #489c79;
+}
+
+.button3:hover {
+    font-size: 18px;
+}
+
+
+/* Tests with transformations */
+* {
+    font-family: 'arial';
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.grid__item {
+    border: 2px solid black;
+    padding: 10px;
+    height: 320px;
+}
+
+.grid__item pre {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-align: initial;
+}
+
+.box {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background: blue;
+    text-align: center;
+    transition: all 1s;
+}
+
+.shadow {
+    position: relative;
+    z-index: 1;
+    opacity: 0.5;
+    top: -80px;
+}
+
+/* The following rule's purpose is to highlight where the default origin point would be within the blue box*/
+.origin-point {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+/* .real represents the actual blue box, uncomment the following three rules to see the effect */
+
+/* .real.translate-120-50{
+  transform: translate(120px, 50px);
+} */
+
+/* .real.rotate-45 {
+  transform: rotate(45deg);
+} */
+
+/* .real.scale-2-2 {
+  transform: scale(2, 2);
+} */
+
+/*=============================*/
+/* .shadow element is meant to show how the blue box would look like if we apply the specified transformations */
+
+.shadow.translate-120-50 {
+    transform: translate(120px, 50px);
+}
+
+.shadow.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.shadow.scale-2-2 {
+    transform: scale(2, 2);
+}
+/* Tests HTML and CSS only for testing technics in exercises. Must be deleted before deployment */
