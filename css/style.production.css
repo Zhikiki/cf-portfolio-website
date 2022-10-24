@@ -2,8 +2,23 @@
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
-* Browsers: last 4 version
+* Browsers: last 2 version
 */
+
+:root {
+    --dark-color-text: #2b2b2b;
+    --light-color-text: #fff;
+    --primary-accent-color: #357b70;
+    --secondary-accent-color: #e0b354;
+    --primary-color-background: #f2f2f2;
+    --secondary-color-background: #fcf3e0;
+    --button-font-size: 13.33px;
+    --primary-font-family: 'Inter', sans-serif;
+    --secondary-font-fanily: 'Poppins', sans-serif;
+    --button-border: 2px solid rgba(0, 0, 0, 0.3);
+    --font-weight-heading: 700;
+    --font-weight-article: 400;
+}
 
 * {
     -webkit-box-sizing: border-box;
@@ -11,12 +26,12 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
+    font-family: var(--primary-font-family);
+    font-weight: var(--font-weight-article);
     font-size: 16px;
     line-height: 1.6;
-    background-color: #f2f2f2;
-    color: #2b2b2b;
+    background-color: var(--primary-color-background);
+    color: var(--dark-color-text);
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 30px;
@@ -64,22 +79,22 @@ body {
 }
 
 h1 {
-    color: #357b70;
-    font-family: 'Poppins', sans-serif;
+    color: var(--primary-accent-color);
+    font-family: var(--secondary-font-fanily);
     font-size: 36px;
-    font-weight: 700;
+    font-weight: var(--font-weight-heading);
 }
 
 h2 {
-    color: #357b70;
-    font-family: 'Poppins', sans-serif;
+    color: var(--primary-accent-color);
+    font-family: var(--secondary-font-fanily);
     font-size: 24px;
-    font-weight: 700;
+    font-weight: var(--font-weight-heading);
     text-decoration: underline;
 }
 
 a {
-    color: #357b70;
+    color: var(--primary-accent-color);
 
 }
 
@@ -107,43 +122,28 @@ I don't understend where is the code which works for hover/focus for links*/
     cursor: pointer;
 }
 
-.navigation-list a:before {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #357b70;
-    content: "";
-    opacity: 0;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
+.navigation-list a:before,
 .navigation-list a:after {
     position: absolute;
     left: 0px;
     width: 100%;
     height: 2px;
-    background: #357b70;
+    background: var(--primary-accent-color);
     content: "";
     opacity: 0;
     -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
 .navigation-list a:before {
     top: -5px;
     -webkit-transform: translateY(10px);
-    -ms-transform: translateY(10px);
     transform: translateY(10px);
 }
 
 .navigation-list a:after {
     bottom: -5px;
     -webkit-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
     transform: translateY(-10px);
 }
 
@@ -151,55 +151,69 @@ I don't understend where is the code which works for hover/focus for links*/
 .navigation-list a:hover:after {
     opacity: 1;
     -webkit-transform: translateY(0px);
-    -ms-transform: translateY(0px);
     transform: translateY(0px);
 }
 
+.profile,
+.profile__buttons_flexbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
 .profile {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
     max-width: 700px;
-    margin: 0 auto;
 }
 
 .profile__portrait {
-    float: left;
-    width: 250px;
-    margin-right: 40px;
+    max-width: 250px;
     height: auto;
     border-radius: 50%;
 }
 
-button {
-    border: none;
-    font-family: inherit;
-    font-size: 13.33px;
-    background-color: #357b70;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 3px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    -webkit-transition: 0.2s opacity ease-in-out, 0.2s font-size ease-in-out;
-    -o-transition: 0.2s opacity ease-in-out, 0.2s font-size ease-in-out;
-    transition: 0.2s opacity ease-in-out, 0.2s font-size ease-in-out;
+.profile__buttons_flexbox {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
 }
 
+.button,
+.button_secondary,
 .button_cv {
     border: none;
     font-family: inherit;
-    font-size: 13.33px;
-    background-color: #357b70;
-    color: #fff;
+    font-size: var(--button-font-size);
+    background-color: var(--primary-accent-color);
+    color: var(--light-color-text);
     text-decoration: none;
     padding: 10px;
     border-radius: 3px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    border-bottom: var(--button-border);
     -webkit-transition: 0.2s opacity ease-in-out, 0.2s font-size ease-in-out;
-    -o-transition: 0.2s opacity ease-in-out, 0.2s font-size ease-in-out;
     transition: 0.2s opacity ease-in-out, 0.2s font-size ease-in-out;
 }
 
-button:hover,
-button:focus,
+.button:hover,
+.button:focus,
+.button_secondary:hover,
+.button_secondary:focus,
 .button_cv:hover,
 .button_cv:focus {
     cursor: pointer;
@@ -208,21 +222,18 @@ button:focus,
 }
 
 .button_secondary {
-    background-color: #e0b354;
-    color: #2b2b2b
+    background-color: var(--secondary-accent-color);
+    color: var(--dark-color-text)
 }
 
 .button_cv {
-    font-size: 13.33px;
+    font-size: var(--button-font-size);
 }
 
 /* To get rid of this part of code i need to deactivate a:visited */
-.button_cv:visited {
-    color: #fff;
-}
-
+.button_cv:visited,
 .button_cv:active {
-    color: #fff;
+    color: var(--light-color-text);
 }
 
 form {
@@ -245,7 +256,7 @@ form {
     }
 
     .project-list__item {
-        background-color: #fcf3e0;
+        background-color: var(--secondary-color-background);
         padding: 15px;
         width: auto;
         height: auto;
@@ -285,10 +296,14 @@ form {
     }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 565px) {
     .project-list {
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    }
+
+    .profile__content--flexbox {
+        text-align: center;
     }
 }
 
@@ -409,7 +424,6 @@ form {
 }
 
 .page-footer {
-    clear: both;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -418,7 +432,7 @@ form {
     -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
-    margin-top: 55px;
+    margin-top: 30px;
 }
 
 .page-footer a {
