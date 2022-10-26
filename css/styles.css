@@ -143,8 +143,9 @@ I don't understend where is the code which works for hover/focus for links*/
 
 .profile {
     justify-content: center;
-    column-gap: 30px;
-    max-width: 700px;
+    column-gap: 60px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .profile__portrait {
@@ -157,6 +158,16 @@ I don't understend where is the code which works for hover/focus for links*/
     justify-content: flex-start;
     align-items: center;
     column-gap: 10px;
+}
+
+.techno {
+    display: inline-block;
+    padding: 2px;
+    margin-inline: 5px;
+    background: black;
+    color: var(--secondary-accent-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: inherit;
 }
 
 .button,
@@ -232,7 +243,14 @@ form {
 }
 
 
-@media all and (max-width: 805px) {
+@media all and (max-width: 750px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+.profile__buttons_flexbox {
+    justify-content: center;
+}
     .project-list {
         grid-gap: 10px;
     }
@@ -258,10 +276,6 @@ form {
 @media all and (max-width: 565px) {
     .project-list {
         grid-template-columns: 1fr;
-    }
-
-    .profile__content--flexbox {
-        text-align: center;
     }
 }
 
