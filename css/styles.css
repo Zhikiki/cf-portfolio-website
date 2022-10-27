@@ -183,7 +183,7 @@ I don't understend where is the code which works for hover/focus for links*/
 
 .button,
 .button_secondary,
-.button_cv {
+.button_cv, input[type=submit] {
     border: none;
     font-family: inherit;
     font-size: var(--button-font-size);
@@ -201,13 +201,15 @@ I don't understend where is the code which works for hover/focus for links*/
 .button_secondary:hover,
 .button_secondary:focus,
 .button_cv:hover,
-.button_cv:focus {
+.button_cv:focus,
+input[type=submit]:hover,
+input[type=submit]:focus {
     cursor: pointer;
     opacity: 0.9;
     font-size: 15.5px;
 }
 
-.button_secondary {
+.button_secondary, input[type=submit] {
     background-color: var(--secondary-accent-color);
     color: var(--dark-color-text)
 }
@@ -223,13 +225,62 @@ I don't understend where is the code which works for hover/focus for links*/
 .button_cv:active {
     color: var(--light-color-text);
 }
+
 .contact-info {
     text-align: center;
 }
+
 form {
-    margin-top: 25px;
+    max-width: 750px;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 10px;
+
 }
 
+.contact-form__item {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    width: 100%;
+
+    text-align: left;
+}
+
+.contact-form__item div {
+    max-width: 250px;
+}
+
+/* I wanted input to be more wide. 
+If i put width: 100% without specific px, it doesnt work */
+
+.contact-form__item input,
+textarea {
+    display: block;
+    border: none;
+    border-bottom: 2px solid #f3deb1;
+    background-color: white;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.contact-form__item input {
+    width: 240px;
+    padding: 5px;
+}
+
+/* Can not fix the right width, so all imputs will be the same width */
+textarea {
+    margin: 0 auto;
+    width: 80%;
+    padding: 5px;
+}
+input[type=submit] {
+    display: block;
+    margin: 20px auto;
+}
 .project-list__item {
     display: inline-block;
     width: 33%;
@@ -284,7 +335,9 @@ form {
     h2 {
         font-size: 19px;
     }
-    body, h3 {
+
+    body,
+    h3 {
         font-size: 14px;
     }
 }
