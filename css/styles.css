@@ -235,7 +235,6 @@ form {
     line-height: 1.6;
     margin: 0 auto;
     padding: 10px;
-
 }
 
 .contact-form__item {
@@ -244,7 +243,6 @@ form {
     flex-wrap: wrap;
     column-gap: 10px;
     width: 100%;
-
     text-align: left;
 }
 
@@ -354,6 +352,13 @@ input[type=submit] {
     }
 }
 
+svg {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: auto;
+    margin-bottom: 50px;
+}
 @keyframes color-change {
     0% {
         fill: #edc655;
