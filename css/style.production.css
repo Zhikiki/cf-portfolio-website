@@ -78,19 +78,30 @@ body {
     text-decoration: underline;
 }
 
-h1 {
-    color: var(--primary-accent-color);
+h1,
+h2,
+h3 {
     font-family: var(--secondary-font-fanily);
-    font-size: 36px;
     font-weight: var(--font-weight-heading);
 }
 
+h1,
 h2 {
     color: var(--primary-accent-color);
-    font-family: var(--secondary-font-fanily);
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
     font-size: 24px;
-    font-weight: var(--font-weight-heading);
     text-decoration: underline;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 0 0 20px 0;
 }
 
 a {
@@ -170,10 +181,11 @@ I don't understend where is the code which works for hover/focus for links*/
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-column-gap: 30px;
-    -moz-column-gap: 30px;
-    column-gap: 30px;
-    max-width: 700px;
+    -webkit-column-gap: 60px;
+    -moz-column-gap: 60px;
+    column-gap: 60px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .profile__portrait {
@@ -194,9 +206,20 @@ I don't understend where is the code which works for hover/focus for links*/
     column-gap: 10px;
 }
 
+.techno {
+    display: inline-block;
+    padding: 2px;
+    margin-inline: 5px;
+    background: black;
+    color: var(--secondary-accent-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: inherit;
+}
+
 .button,
 .button_secondary,
-.button_cv {
+.button_cv,
+input[type=submit] {
     border: none;
     font-family: inherit;
     font-size: var(--button-font-size);
@@ -215,19 +238,24 @@ I don't understend where is the code which works for hover/focus for links*/
 .button_secondary:hover,
 .button_secondary:focus,
 .button_cv:hover,
-.button_cv:focus {
+.button_cv:focus,
+input[type=submit]:hover,
+input[type=submit]:focus {
     cursor: pointer;
     opacity: 0.9;
     font-size: 15.5px;
 }
 
-.button_secondary {
+.button_secondary,
+input[type=submit] {
     background-color: var(--secondary-accent-color);
     color: var(--dark-color-text)
 }
 
 .button_cv {
+    display: inline-block;
     font-size: var(--button-font-size);
+    margin-block: 20px;
 }
 
 /* To get rid of this part of code i need to deactivate a:visited */
@@ -236,8 +264,66 @@ I don't understend where is the code which works for hover/focus for links*/
     color: var(--light-color-text);
 }
 
+.contact-info {
+    text-align: center;
+}
+
 form {
-    margin-top: 55px;
+    max-width: 750px;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.contact-form__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-form__item div {
+    max-width: 250px;
+}
+
+/* I wanted input to be more wide. 
+If i put width: 100% without specific px, it doesnt work */
+
+.contact-form__item input,
+textarea {
+    display: block;
+    border: none;
+    border-bottom: 2px solid #f3deb1;
+    background-color: white;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.contact-form__item input {
+    width: 240px;
+    padding: 5px;
+}
+
+/* Can not fix the right width, so all imputs will be the same width */
+textarea {
+    margin: 0 auto;
+    width: 80%;
+    padding: 5px;
+}
+
+input[type=submit] {
+    display: block;
+    margin: 20px auto;
 }
 
 .project-list__item {
@@ -273,7 +359,21 @@ form {
 }
 
 
-@media all and (max-width: 805px) {
+@media all and (max-width: 750px) {
+    .profile {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile__buttons_flexbox {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
     .project-list {
         grid-gap: 10px;
     }
@@ -291,7 +391,8 @@ form {
         font-size: 19px;
     }
 
-    body {
+    body,
+    h3 {
         font-size: 14px;
     }
 }
@@ -301,10 +402,6 @@ form {
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
-
-    .profile__content--flexbox {
-        text-align: center;
-    }
 }
 
 @media all and (min-width: 500px) and (max-width: 805px) {
@@ -312,6 +409,14 @@ form {
         -ms-grid-columns: 1fr 10px 1fr;
         grid-template-columns: 1fr 1fr;
     }
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: auto;
+    margin-bottom: 50px;
 }
 
 @-webkit-keyframes color-change {
