@@ -85,7 +85,7 @@ h2 {
 
 h3 {
     font-size: 16px;
-    margin: ;
+    margin: 0 0 20px 0;
 }
 
 a {
@@ -215,7 +215,7 @@ I don't understend where is the code which works for hover/focus for links*/
 .button_cv {
     display: inline-block;
     font-size: var(--button-font-size);
-    margin-top: 20px;
+    margin-block: 20px;
 }
 
 /* To get rid of this part of code i need to deactivate a:visited */
@@ -227,7 +227,7 @@ I don't understend where is the code which works for hover/focus for links*/
     text-align: center;
 }
 form {
-    margin-top: 55px;
+    margin-top: 25px;
 }
 
 .project-list__item {
